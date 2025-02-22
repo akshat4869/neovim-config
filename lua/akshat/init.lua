@@ -16,5 +16,6 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
         vim.keymap.set("n", "gtd", function() vim.lsp.buf.type_definition() end, opts)
         vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+        vim.keymap.set("n", "<C-e>", function() vim.diagnostic.open_float({scope="line"}) end, opts)
     end
 })

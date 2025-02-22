@@ -88,7 +88,7 @@ return {
            mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
@@ -99,8 +99,9 @@ return {
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
             float = {
+                max_width = 80,
+                max_height = 10,
                 focusable = false,
                 style = "minimal",
                 border = "rounded",
@@ -108,6 +109,8 @@ return {
                 header = "",
                 prefix = "",
             },
+
+            update_in_insert = true,
         })
     end
 }
